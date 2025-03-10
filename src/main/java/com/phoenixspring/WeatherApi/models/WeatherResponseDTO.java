@@ -1,6 +1,5 @@
 package com.phoenixspring.WeatherApi.models;
 
-import com.phoenixspring.WeatherApi.models.Day;
 
 import java.io.Serializable;
 import java.util.List;
