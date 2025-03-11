@@ -1,6 +1,7 @@
 package com.phoenixspring.WeatherApi.models;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.phoenixspring.WeatherApi.Helper;
 
 import java.io.Serializable;
 import java.util.List;
@@ -39,6 +40,6 @@ public record Day(String datetime, long dateTimeEpoch,
 
     @JsonGetter
     public double tempMaxCelsius(){
-        return (tempmax - 32) * 5/9;
+        return Helper.convertFToC(tempmax);
     }
 }

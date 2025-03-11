@@ -1,6 +1,7 @@
 package com.phoenixspring.WeatherApi.models;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.phoenixspring.WeatherApi.Helper;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,24 +36,22 @@ public record Hour(
         String source) implements Serializable {
     @JsonGetter("tempmaxC")
     public double tempmaxC() {
-        return convertFToC(tempmax);
+        return Helper.convertFToC(tempmax);
     }
 
     @JsonGetter("tempminC")
     public double tempminC() {
-        return convertFToC(tempmin);
+        return Helper.convertFToC(tempmin);
     }
 
     @JsonGetter("tempC")
     public double tempC() {
-        return convertFToC(temp);
+        return Helper.convertFToC(temp);
     }
 
     @JsonGetter("feelslikeC")
     public double feelslikeC() {
-        return convertFToC(feelslike);
+        return Helper.convertFToC(feelslike);
     }
-    private double convertFToC(double fahrenheit) {
-        return (fahrenheit - 32) * 5/9;
-    }
+
 }
