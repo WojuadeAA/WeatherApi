@@ -9,8 +9,7 @@ import java.util.List;
 public record Hour(
         String datetime,
         long datetimeEpoch,
-        double tempmax,
-        double tempmin,
+
         double temp,
 
         double feelslike,
@@ -34,15 +33,6 @@ public record Hour(
         String icon,
         List<String> stations,
         String source) implements Serializable {
-    @JsonGetter("tempmaxC")
-    public double tempmaxC() {
-        return Helper.convertFToC(tempmax);
-    }
-
-    @JsonGetter("tempminC")
-    public double tempminC() {
-        return Helper.convertFToC(tempmin);
-    }
 
     @JsonGetter("tempC")
     public double tempC() {
